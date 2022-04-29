@@ -23,7 +23,6 @@ def cypher(sentence:str, n:int) -> str:
         results += chr(new_letter)
         
     return results
-print("Enter a number to bump from followed by a sentence in a string form: ")
 n = sys.argv[1]
 sentence = sys.argv[2]
 print(cypher(sentence, n))
