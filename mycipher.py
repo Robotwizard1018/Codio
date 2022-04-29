@@ -1,8 +1,6 @@
 #!/bin/bash
 import sys
 
-
-
 def cipher(sentence:str, n:int) -> str:
     #Uppercase letters 65-90
     #Lowercase letters 97-122
@@ -29,15 +27,21 @@ n = sys.argv[1]
 charcount = 0
 linecount = 0
 output = ""
+
 for line in sys.stdin:
+  #Encodes each line by the desired ammount
   line = cipher(line, n)
+
   for char in line:
     charcount += 1
     output += char
+
+    #Adds a space every five characters
     if charcount % 5 == 0:
       output += " "
       linecount += 1
-    
+
+    #Adds a new line every ten blocks of five characters
     if linecount == 10:
       output += "\n"
       linecount = 0
